@@ -1,3 +1,8 @@
+/* General CSS */
+body {
+  margin: 0;
+}
+
 p {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
@@ -6,10 +11,32 @@ p {
   width: 100%;
 }
 
-.search-bar {
-  display: block;
+/* Header Section */
+.header {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
+.left-section {
+  background-color: aqua;
+  width: 150px;
+}
+
+.middle-section {
+  background-color: bisque;
+  flex: 1;
+  margin: 0 35px 0 70px;
+  max-width: 500px;
+}
+
+.right-section {
+  background-color: brown;
+  width: 200px;
+}
+
+/* Video Section */
 .video-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

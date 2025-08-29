@@ -1,6 +1,14 @@
+/* Universal Styling */
+* {
+  box-sizing: border-box;
+}
+
 /* General CSS */
 body {
   margin: 0;
+  padding-left: 80px;
+  padding-top: 80px;
+  height: 5000px;
 }
 
 p {
@@ -13,10 +21,19 @@ p {
 
 /* Header Section */
 .header {
+  background-color: whitesmoke;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(220, 220, 220);
   height: 55px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
 }
 
 .left-section {
@@ -106,13 +123,39 @@ p {
   height: 24px;
 }
 
+.notifications-icon-container {
+  position: relative;
+}
+
 .notifications-icon {
   height: 24px;
+}
+
+.notifications-count {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  background-color: rgb(200, 0, 0);
+  color: #fff;
+  font-family: Roboto, Arial;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 10px;
 }
 
 .current-user-picture {
   height: 32px;
   border-radius: 16px;
+}
+
+/* Sidebar Section */
+.sidebar {
+  background-color: whitesmoke;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 55px;
+  width: 72px;
 }
 
 /* Video Section */
@@ -146,6 +189,20 @@ p {
 
 .video-thumbnail {
   margin-bottom: 15px;
+  position: relative;
+}
+
+.video-time {
+  font-family: Roboto, Arial;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 4px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
 }
 
 .video-author,

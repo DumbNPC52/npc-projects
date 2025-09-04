@@ -3,8 +3,11 @@
   box-sizing: border-box;
 }
 
+/* Root Variable */
+
 /* General CSS */
 body {
+  font-family: Roboto, Arial, sans-serif;
   margin: 0;
   padding-left: 96px;
   padding-right: 24px;
@@ -13,11 +16,10 @@ body {
 }
 
 p {
-  font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
 
-.thumbnail-1 {
+.thumbnail {
   width: 100%;
 }
 
@@ -66,9 +68,7 @@ p {
   flex: 1;
   height: 40px;
   font-size: 16px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
   border-radius: 2px;
   box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
   padding: 0 0 0 10px;
@@ -76,7 +76,6 @@ p {
 }
 
 .search-bar::placeholder {
-  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   padding: 0 0 0 12px;
 }
@@ -86,9 +85,7 @@ p {
   height: 40px;
   width: 64px;
   background-color: rgb(240, 240, 240);
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
   margin-left: -1px;
   position: relative;
 }
@@ -176,7 +173,6 @@ p {
   right: -5px;
   background-color: rgb(200, 0, 0);
   color: #fff;
-  font-family: Roboto, Arial;
   font-size: 11px;
   padding: 2px 5px;
   border-radius: 10px;
@@ -220,7 +216,6 @@ p {
 }
 
 .sidebar-link div {
-  font-family: Roboto, Arial, sans-serif;
   font-size: 10px;
 }
 
@@ -269,8 +264,11 @@ p {
   position: relative;
 }
 
+.span-text {
+  color: dodgerblue;
+}
+
 .video-time {
-  font-family: Roboto, Arial;
   font-size: 12px;
   font-weight: 500;
   padding: 4px 4px;
@@ -294,5 +292,155 @@ p {
 }
 
 /* ToolTip CSS for Video Section */
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
 
+.channel-tooltip {
+  background-color: white;
+  width: 200px;
+  padding: 12px 12px;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  position: absolute;
+  top: 55px;
+  z-index: 300;
 
+  opacity: 0;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+
+.profile-pic-container:hover .channel-tooltip {
+  opacity: 1;
+}
+
+.tooltip-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 8px;
+}
+
+.channel-tooltip-name {
+  font-family: Roboto, Arial;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.channel-tooltip-stats {
+  font-family: Roboto, Arial;
+  color: rgb(96, 96, 96);
+  font-size: 14px;
+}
+
+/* Responsive CSS & Media Query */
+@media (max-width: 750px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .video-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .video-author,
+  .video-stats {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200.1px) {
+  body {
+    margin-left: 168px;
+  }
+}
+
+/* @media (max-width: 1200px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px;
+    background-color: white;
+    width: 72px;
+    z-index: 200;
+    padding-top: 5px;
+  }
+
+  .sidebar-link {
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+  }
+
+  .sidebar-link img {
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-link div {
+    font-family: Roboto, Arial;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1200.1px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 55px;
+    background-color: white;
+    width: 240px;
+    z-index: 200;
+    padding-top: 13px;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 24px;
+    flex-direction: row;
+  }
+
+  .sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+  }
+
+  .sidebar-link img {
+    height: 24px;
+    margin-right: 24px;
+  }
+
+  .sidebar-link div {
+    font-family: Roboto, Arial;
+    font-size: 14px;
+  }
+} */

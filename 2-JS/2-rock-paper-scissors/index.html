@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NPC">
+  <meta name="description" content="A simple Rock Paper Scissors game implemented in JavaScript.">
+  <meta name="keywords" content="JavaScript, Game, Rock Paper Scissors, HTML, CSS">
+  <title>Rock Paper Scissors</title>
+  <!-- Link to Montserrat Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Link to CSS File -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Rock Paper Scissors</h1>
+  </header>
+
+  <main>
+    <div class="game-container">
+      <button
+        class="rock-btn"
+        onclick="
+          const randomNumber = Math.random();
+
+          if (randomNumber >= 0 && randomNumber < 1/3) {
+            computerChoice = 'rock';
+
+          } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+            computerChoice = 'paper';
+
+          } else if (randomNumber >= 2/3 && randomNumber < 1) {
+            computerChoice = 'scissors';
+          }
+
+          console.log(computerChoice);
+
+          let result = '';
+
+          if (computerChoice === 'rock') {
+            result = 'It\'s a tie!';
+          } else if (computerChoice === 'paper') {
+            result = 'You lose!';
+          } else if (computerChoice === 'scissors') {
+            result = 'You win!';
+          }
+
+          console.log(result);
+          alert(`You chose Rock. Computer chose ${computerChoice}. ${result}`);
+
+        ">Rock</button>
+
+      <button
+        class="paper-btn"
+        onclick="
+          const randomNumber = Math.random();
+
+          if (randomNumber >= 0 && randomNumber < 1/3) {
+            computerChoice = 'rock';
+
+          } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+            computerChoice = 'paper';
+
+          } else if (randomNumber >= 2/3 && randomNumber < 1) {
+            computerChoice = 'scissors';
+          }
+
+          console.log(computerChoice);
+
+          let result = '';
+
+          if (computerChoice === 'rock') {
+            result = 'You win!';
+          } else if (computerChoice === 'paper') {
+            result = 'It\'s a tie!';
+          } else if (computerChoice === 'scissors') {
+            result = 'You lose!';
+          }
+
+          console.log(result);
+          alert(`You chose Paper. Computer chose ${computerChoice}. ${result}`);
+
+        ">Paper</button>
+
+      <button class="scissors-btn"
+        onclick="
+          const randomNumber = Math.random();
+
+          if (randomNumber >= 0 && randomNumber < 1/3) {
+            computerChoice = 'rock';
+
+          } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+            computerChoice = 'paper';
+
+          } else if (randomNumber >= 2/3 && randomNumber < 1) {
+            computerChoice = 'scissors';
+          }
+
+          console.log(computerChoice);
+
+          let result = '';
+
+          if (computerChoice === 'rock') {
+            result = 'You lose!';
+          } else if (computerChoice === 'paper') {
+            result = 'You win!';
+          } else if (computerChoice === 'scissors') {
+            result = 'It\'s a tie!';
+          }
+
+          console.log(result);
+          alert(`You chose Scissors. Computer chose ${computerChoice}. ${result}`);
+
+        ">Scissors</button>
+    </div>
+  </main>
+
+  <!-- Javascript Code -->
+  <script>
+    // JavaScript code will go here;
+    let computerChoice = '';
+  </script>
+</body>
+</html>

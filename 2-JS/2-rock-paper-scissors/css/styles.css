@@ -1,0 +1,43 @@
+/* Universal Styling */
+* {
+  box-sizing: border-box;
+}
+
+/* General CSS */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header, main {
+  margin: 5px 0 0 10px;
+}
+
+.rock-btn,
+.paper-btn,
+.scissors-btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #afaeae;
+  transition: background-color 0.3s ease;
+}
+
+.rock-btn:hover,
+.paper-btn:hover,
+.scissors-btn:hover {
+  background-color: #e0e0e0;
+}
+
+

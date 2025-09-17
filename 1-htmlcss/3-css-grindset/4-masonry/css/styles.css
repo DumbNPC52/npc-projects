@@ -1,0 +1,148 @@
+/* Import Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d9e8f5;
+}
+
+/* Header Section */
+header {
+  background: linear-gradient(90deg, #a6c0fd 0%, #f0f8ff 100%);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  border-bottom: 2px solid #93c8fd;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007BFF;
+}
+
+nav h1 {
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+.express-text {
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #007BFF;
+}
+
+.yourself-text {
+  font-weight: 400;
+  color: #007BFF;
+}
+
+/* Main Section Styling */
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 250px;
+  gap: 30px;
+}
+
+main div {
+  overflow: hidden;
+  background: #dbeeff;
+  border-radius: 6px;
+  border: 16px solid #f0f8ff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  display: inline-block;
+  margin: 0 5px 0 12px;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+
+main img {
+  min-width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+main img:hover {
+  transform: scale(1.1);
+}
+
+main .short-text,
+.short-img-container {
+  grid-row: span 1;
+}
+
+main .long-text,
+.tall-img-container {
+  grid-row: span 2;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 960px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  main {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+  nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  nav h1 {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    font-size: 1.2em;
+  }
+}

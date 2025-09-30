@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NPC">
+  <meta name="description" content="Updating Cart Quantity Mini Project using Functions">
+  <meta name="keywords" content="HTML, CSS, Javascript conditionals, Functions, Cart Quantity update">
+  <title>Cart Quantity - Updated</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <p class="cart-quantity-text">
+    Cart Quantity Mini Project Using Functions
+  </p>
+
+  <!-- Buttons -->
+  <button class="show-btn" onclick="console.log(`Cart Quantity: ${cartQuantity}`);">
+    Show Quantity
+  </button>
+
+  <button class="add-btn" onclick="updateCartQuantity(1)">
+    Add to Cart
+  </button>
+
+  <button class="add-two-btn" onclick="updateCartQuantity(2)">
+    +2
+  </button>
+
+  <button class="add-three-btn" onclick="updateCartQuantity(3)">
+    +3
+  </button>
+
+  <button class="add-four-btn" onclick="updateCartQuantity(4)">
+    +4
+  </button>
+
+  <button class="add-five-btn" onclick="updateCartQuantity(5)">
+    +5
+  </button>
+
+  <button class="remove-btn" onclick="updateCartQuantity(-1)">
+    Remove from Cart
+  </button>
+
+  <button class="remove-two-btn" onclick="updateCartQuantity(-2)">
+    -2
+  </button>
+
+  <button class="remove-three-btn" onclick="updateCartQuantity(-3)">
+    -3
+  </button>
+
+  <button class="reset-btn" onclick="
+    cartQuantity = 0;
+    console.log('Cart was reset.');
+    console.log(`Cart Quantity: ${cartQuantity}`);
+  ">
+    Reset
+  </button>
+
+  <!-- JavaScript -->
+  <script>
+    let cartQuantity = 0;
+
+    function updateCartQuantity(change) {
+      if (cartQuantity + change > 10) {
+        alert('The cart is full');
+        return;
+      }
+
+      if (cartQuantity + change < 0) {
+        alert('Not enough items in the cart');
+        return;
+      }
+
+      cartQuantity += change;
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    }
+  </script>
+</body>
+</html>

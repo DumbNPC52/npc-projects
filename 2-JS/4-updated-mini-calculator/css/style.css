@@ -1,0 +1,139 @@
+/* Universal Styling */
+* {
+  box-sizing: border-box;
+}
+
+/* General Styling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Calculator Styling */
+button {
+  height: 60px;
+  width: 60px;
+  font-size: 20px;
+  margin: 8px 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(to right, #4caf50, #46eec4);
+  font-weight: 550;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #46eec4, #4caf50);
+}
+
+button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Assign Button Styling */
+.assign-btn {
+  background: linear-gradient(to right, #ff5722, #ff9800);
+}
+.assign-btn:hover {
+  background: linear-gradient(to right, #ff9800, #ff5722);
+}
+.assign-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Clear Button Styling */
+.clear-btn {
+  background: linear-gradient(to right, #f44336, #e91e63);
+  width: 80px;
+  height: 80px;
+}
+.clear-btn:hover {
+  background: linear-gradient(to right, #e91e63, #f44336);
+}
+.clear-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Add Button Styling */
+.add-btn {
+  background: linear-gradient(to right, #2196f3, #03a9f4);
+}
+.add-btn:hover {
+  background: linear-gradient(to right, #03a9f4, #2196f3);
+}
+.add-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Decimal Button Styling */
+.decimal-btn {
+  background: linear-gradient(to right, #9c27b0, #673ab7);
+}
+.decimal-btn:hover {
+  background: linear-gradient(to right, #673ab7, #9c27b0);
+}
+.decimal-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Add Zero Button Styling */
+.add-zero-btn {
+  background: linear-gradient(to right, #ffeb3b, #ffc107);
+}
+.add-zero-btn:hover {
+  background: linear-gradient(to right, #ffc107, #ffeb3b);
+}
+.add-zero-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Divide Button Styling */
+.divide-btn {
+  background: linear-gradient(to right, #00bcd4, #009688);
+}
+.divide-btn:hover {
+  background: linear-gradient(to right, #009688, #00bcd4);
+}
+.divide-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Subtract Button Styling */
+.subtract-btn {
+  background: linear-gradient(to right, #f44336, #e91e63);
+}
+.subtract-btn:hover {
+  background: linear-gradient(to right, #e91e63, #f44336);
+}
+.subtract-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Multiply Button Styling */
+.multiply-btn {
+  background: linear-gradient(to right, #8bc34a, #4caf50);
+}
+.multiply-btn:hover {
+  background: linear-gradient(to right, #4caf50, #8bc34a);
+}
+.multiply-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}

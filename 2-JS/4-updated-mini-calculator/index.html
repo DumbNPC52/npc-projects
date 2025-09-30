@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="NPC" />
+    <meta
+      name="description"
+      content="An updated mini calculator project using HTML, CSS, and JavaScript Functions."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Functions, Mini Calculator, Web Development"
+    />
+    <title>Mini Calculator Project</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Mini Calculator Project -->
+    <p>
+      <button
+        class="add-one-btn"
+        onclick="
+          updateCalculation('1');"
+      >
+        1
+      </button>
+      <button
+        class="add-two-btn"
+        onclick="
+          updateCalculation('2');"
+      >
+        2
+      </button>
+      <button
+        class="add-three-btn"
+        onclick="
+          updateCalculation('3');"
+      >
+        3
+      </button>
+      <button
+        class="add-btn"
+        onclick="
+          updateCalculation(' + ');"
+      >
+        +
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-four-btn"
+        onclick="
+          updateCalculation('4');"
+      >
+        4
+      </button>
+      <button
+        class="add-five-btn"
+        onclick="
+          updateCalculation('5');"
+      >
+        5
+      </button>
+      <button
+        class="add-six-btn"
+        onclick="
+          updateCalculation('6');"
+      >
+        6
+      </button>
+      <button
+        class="subtract-btn"
+        onclick="
+          updateCalculation(' - ');"
+      >
+        -
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-seven-btn"
+        onclick="
+          updateCalculation('7');"
+      >
+        7
+      </button>
+      <button
+        class="add-eight-btn"
+        onclick="
+          updateCalculation('8');"
+      >
+        8
+      </button>
+      <button
+        class="add-nine-btn"
+        onclick="
+          updateCalculation('9');"
+      >
+        9
+      </button>
+      <button
+        class="multiply-btn"
+        onclick="
+          updateCalculation(' * ');"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-zero-btn"
+        onclick="
+          updateCalculation('0');"
+      >
+        0
+      </button>
+      <button
+        class="decimal-btn"
+        onclick="
+          updateCalculation('.');"
+      >
+        .
+      </button>
+      <button
+        class="assign-btn"
+        onclick="
+          calculation = eval(calculation);
+          console.log(calculation);"
+      >
+        =
+      </button>
+      <button
+        class="divide-btn"
+        onclick="
+          updateCalculation(' / ');"
+      >
+        /
+      </button>
+    </p>
+    <p>
+      <button
+        class="clear-btn"
+        onclick="
+          calculation = '';
+          console.log('Cleared.');"
+      >
+        Clear
+      </button>
+    </p>
+
+    <!-- Javascript Code -->
+    <script>
+      // Declaring a variable and assigning it an empty string;
+      let calculation = '';
+
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+      }
+    </script>
+  </body>
+</html>

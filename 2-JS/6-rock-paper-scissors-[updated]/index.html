@@ -54,6 +54,10 @@
           score.wins = 0;
           score.losses = 0;
           score.ties = 0;
+
+          // Remove score from local storage when resetting
+          localStorage.removeItem('theScore');
+
           alert('Score has been reset!');
           ">
           Reset Score
@@ -64,7 +68,8 @@
     <!-- Javascript Code -->
     <script>
       // Assigning a variable to update and store score;
-      const score = {
+      // Getting score from local storage
+      let score =  JSON.parse(localStorage.getItem('theScore')) || {
         wins: 0,
         losses: 0,
         ties: 0,
@@ -113,6 +118,9 @@
         } else if (result === 'It\'s a tie!') {
           score.ties += 1;
         }
+
+        // Saving the score to local storage
+        localStorage.setItem('theScore', JSON.stringify(score));
 
         alert(`You chose ${playerMove}. Computer chose ${computerChoice}. ${result}
         Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);

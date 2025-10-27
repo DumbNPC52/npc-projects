@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="npc">
+  <meta name="description" content="Updated Coin Flip game using Javascript Objects">
+  <meta name="keywords" content="Javascript, Objects, Coin Flip game, HTML">
+  <title>Coin Flip</title>
+</head>
+<body>
+  <h1>Coin Flip</h1>
+  <button
+    class="heads-btn"
+    onclick="playGame('heads');"
+  >
+    Heads</button>
+  <button
+    class="tails-btn"
+    onclick="playGame('tails');"
+  >
+    Tails</button>
+  <button
+    class="reset-btn"
+    onclick="resetGame();"
+  >
+    Reset</button>
+
+  <!-- Javascript Code Block -->
+  <script>
+    // Retrieving theScore object from localStorage or initializing it;
+    const theScore =  JSON.parse(localStorage.getItem('theScore')) || {
+      wins: 0,
+      losses: 0,
+    };
+
+    // Function to save theScore object to localStorage;
+    function saveScore() {
+      localStorage.setItem('theScore', JSON.stringify(theScore));
+    }
+
+    // Reset function to clear the score;
+    function resetGame() {
+      theScore.wins = 0;
+      theScore.losses = 0;
+      saveScore();
+      alert('Score has been reset!');
+    }
+
+    // Main game function;
+    function playGame(guess){
+      const randomNum = Math.random();
+      const theResult = randomNum < 0.5 ? 'heads' : 'tails';
+      const win = guess === theResult;
+
+      // Updating the score
+      if (win) {
+        theScore.wins++;
+      } else {
+        theScore.losses++;
+      }
+
+      // Saving the updated score to localStorage;
+      saveScore();
+
+      // Displaying the updated score;
+      console.log(`You guessed: ${guess}. The result was: ${theResult}.`);
+      console.log(`Wins: ${theScore.wins}, Losses: ${theScore.losses}`);
+
+      alert(`You guessed: ${guess}. The result was: ${theResult}.\nWins: ${theScore.wins}, Losses: ${theScore.losses}`);
+      };
+  </script>
+</body>
+</html>

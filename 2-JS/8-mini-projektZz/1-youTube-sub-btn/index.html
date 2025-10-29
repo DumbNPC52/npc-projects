@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="npc">
+  <meta name="description" content="Youtube Subscribe Button DOM mini Project">
+  <meta name="keywords" content="HTML,CSS,JavaScript,DOM,YouTube Subscribe Button">
+  <title>YouTube Subscribe Button</title>
+</head>
+<body>
+  <nav class="navigation--container">
+    <a href="/2-R-P-S[Final Update]/index.html">Rock Paper Scissors</a>
+    <a href="/3-amaZon-shipping-Calc/index.html">Amazon Shipping Calculator</a>
+  </nav>
+
+  <header class="title">
+    <p class="title--text">YouTube Subscribe Button</p>
+  </header>
+
+  <section class="btn">
+    <button
+      class="btn--subscribe"
+      onclick="checkSubscription()"
+      >Subscribe</button>
+  </section>
+
+  <!-- Javascript Section -->
+  <script>
+    // Function to handle subscribe button click;
+    const subscribeButton = document.querySelector('.btn--subscribe');
+
+    function checkSubscription() {
+      if(subscribeButton.innerText === 'Subscribe') {
+        subscribeButton.innerText = 'Subscribed';
+        alert('Thank you for subscribing to NPC\'s YouTube Channel!');
+      } else {
+        subscribeButton.innerText = 'Subscribe';
+        alert(`You have unsubscribed from NPC's YouTube Channel!`);
+      }
+    };
+  </script>
+
+</body>
+</html>

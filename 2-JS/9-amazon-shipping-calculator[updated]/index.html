@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="npc">
+  <meta name="description" content="An updated Amazon Shipping Calculator DOM mini Project">
+  <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Amazon Shipping Calculator">
+  <title>Amazon Shipping Calculator</title>
+</head>
+<body>
+  <nav class="navigation--container">
+    <a href="/1-youTube-sub-btn/index.html">YouTube Subscribe Button</a>
+    <a href="/2-R-P-S[Final Update]/index.html">Rock Paper Scissors</a>
+  </nav>
+
+  <main class="main">
+    <header class="main--title">
+      <p class="main--title__text">Amazon Shipping Calculator</p>
+    </header>
+
+    <input
+      placeholder="Cost of order"
+      class="main--input"
+      onkeydown="handleKeyPress(event);
+      ">
+
+    <button
+      class="main--calc-btn"
+      onclick="calculateShipping();
+      ">
+      Calculate</button>
+
+    <p class="main--total-cost"></p>
+  </main>
+
+  <!-- Javascript Section -->
+  <script>
+    // Function to calculate shipping cost
+    function calculateShipping() {
+      // Displaying input value on webpage
+      const input = document.querySelector('.main--input').value;
+      let inputValue = Number(input);
+
+      // Rounding input value to 2 decimal places
+      inputValue = Math.round(inputValue * 100) / 100;
+
+      // Checking if inputValue is less than $40
+      if (inputValue < 40) {
+        inputValue = inputValue + 10;
+      }
+
+      // Displaying total cost on webpage
+      document.querySelector('.main--total-cost')
+        .innerText = `The Total Cost is $${inputValue}`;
+    }
+
+    // Function to check if event key is Enter and call calculateShipping
+    function handleKeyPress(event) {
+      if (event.key === "Enter") {
+        calculateShipping();
+      }
+    }
+
+    // String Conversion
+    String();
+
+    // The Window Object
+    window.document;
+    window.console;
+    window.alert;
+  </script>
+</body>
+</html>

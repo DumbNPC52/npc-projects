@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NPC">
+  <meta name="description" content="Updating Cart Quantity Mini Project using Objects and the DOM">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Objects, DOM, Cart Quantity">
+  <title>Cart Quantity</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <p class="cart-quantity-text">
+    Cart Quantity Mini Project Using Objects and the DOM
+  </p>
+
+  <!-- Buttons -->
+  <button
+    class="show-btn"
+    onclick="showCartQuantity()">
+    Show Quantity
+  </button>
+
+  <button class="add-btn" onclick="updateCartQuantity(1)">
+    Add to Cart
+  </button>
+
+  <button class="add-two-btn" onclick="updateCartQuantity(2)">
+    +2
+  </button>
+
+  <button class="add-three-btn" onclick="updateCartQuantity(3)">
+    +3
+  </button>
+
+  <button class="add-four-btn" onclick="updateCartQuantity(4)">
+    +4
+  </button>
+
+  <button class="add-five-btn" onclick="updateCartQuantity(5)">
+    +5
+  </button>
+
+  <button class="remove-btn" onclick="updateCartQuantity(-1)">
+    Remove from Cart
+  </button>
+
+  <button class="remove-two-btn" onclick="updateCartQuantity(-2)">
+    -2
+  </button>
+
+  <button class="remove-three-btn" onclick="updateCartQuantity(-3)">
+    -3
+  </button>
+
+  <button class="reset-btn" onclick="
+    resetCartQuantity();
+  ">
+    Reset
+  </button>
+
+  <p class="display-cart-quantity"></p>
+
+  <!-- JavaScript -->
+  <script>
+    // Get cart quantity from local storage or initialize to 0
+    let cartQuantity = Number(localStorage.getItem('cartQuantity')) || 0;
+
+    // Initialize display when the page loads
+    showCartQuantity();
+
+    // Function to update cart quantity on the webpage
+    function updateCartQuantity(change) {
+      let displayCartQuantity = document.querySelector('.display-cart-quantity');
+
+      if (cartQuantity + change > 10) {
+        alert('Cannot add more than 10 items to the cart.');
+        displayCartQuantity.innerText = 'Cart is full';
+        return;
+      }
+
+      if (cartQuantity + change < 0) {
+        alert('Not enough items in the cart');
+        displayCartQuantity.innerText = 'Items in cart cannot be less than 0';
+        return;
+      }
+
+      cartQuantity += change;
+      // Save updated cart quantity to local storage
+      localStorage.setItem('cartQuantity', cartQuantity);
+      showCartQuantity();
+    }
+
+    // Function to display cart quantity
+    function showCartQuantity() {
+      const displayCartQuantity = document.querySelector('.display-cart-quantity');
+      displayCartQuantity.innerText = `Cart Quantity: ${cartQuantity}`;
+
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    }
+
+    // Function to reset cart quantity display on page
+    function resetCartQuantity() {
+      const displayCartQuantity = document.querySelector('.display-cart-quantity');
+      displayCartQuantity.innerText = 'Cart was reset';
+      cartQuantity = 0;
+
+      // Resetting Saved Cart Quantity in Local Storage
+      localStorage.setItem('cartQuantity', cartQuantity);
+
+      setTimeout(() => {
+        showCartQuantity();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

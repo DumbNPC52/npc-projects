@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="NPC">
+  <meta name="description" content="Using DOM to create a text box that onkeyup, updates the text on the page">
+  <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Text Box">
+  <title>Text Box Display</title>
+</head>
+<body>
+  <p>Text Box Display</p>
+  <div class="text-box-container">
+    <input
+      type="text"
+      class="text-box"
+      placeholder="Write here..."
+      onkeyup="displayText();"
+    >
+    <p class="display-text-area"></p>
+  </div>
+
+  <!-- Javascript Section -->
+  <script>
+    // Creating a function that triggers on keyup event
+    function displayText () {
+      // Targeting the text box area and displaying result in webpage
+      const textBox = document.querySelector('.text-box');
+      const textBoxValue = textBox.value;
+
+      document.querySelector('.display-text-area')
+        .innerText = textBoxValue;
+    }
+  </script>
+</body>
+</html>

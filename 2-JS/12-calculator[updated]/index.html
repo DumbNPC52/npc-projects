@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="NPC" />
+    <meta
+      name="description"
+      content="An updated calculator project using HTML, CSS, and JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, Javascript, Functions, Objects, DOM, Calculator"
+    />
+    <title>Updated Calculator Project</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onkeydown="handleKeyPress(event);">
+    <!-- Mini Calculator Project -->
+    <p class="calculation-text"></p>
+
+    <p>
+      <button
+        class="add-one-btn"
+        onclick="
+          calculation += '1';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        1
+      </button>
+      <button
+        class="add-two-btn"
+        onclick="
+          calculation += '2';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        2
+      </button>
+      <button
+        class="add-three-btn"
+        onclick="
+          calculation += '3';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        3
+      </button>
+      <button
+        class="add-btn"
+        onclick="
+          calculation += ' + ';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        +
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-four-btn"
+        onclick="
+          calculation += '4';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        4
+      </button>
+      <button
+        class="add-five-btn"
+        onclick="
+          calculation += '5';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        5
+      </button>
+      <button
+        class="add-six-btn"
+        onclick="
+          calculation += '6';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        6
+      </button>
+      <button
+        class="subtract-btn"
+        onclick="
+          calculation += ' - ';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        -
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-seven-btn"
+        onclick="
+          calculation += '7';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        7
+      </button>
+      <button
+        class="add-eight-btn"
+        onclick="
+          calculation += '8';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        8
+      </button>
+      <button
+        class="add-nine-btn"
+        onclick="
+          calculation += '9';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        9
+      </button>
+      <button
+        class="multiply-btn"
+        onclick="
+          calculation += ' * ';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        *
+      </button>
+    </p>
+    <p>
+      <button
+        class="add-zero-btn"
+        onclick="
+          calculation += '0';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        0
+      </button>
+      <button
+        class="decimal-btn"
+        onclick="
+          calculation += '.';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        .
+      </button>
+      <button
+        class="assign-btn"
+        onclick="
+          calculation = eval(calculation);
+          displayCalculation();
+          console.log(calculation);"
+      >
+        =
+      </button>
+      <button
+        class="divide-btn"
+        onclick="
+          calculation += ' / ';
+          displayCalculation();
+          console.log(calculation);"
+      >
+        /
+      </button>
+    </p>
+    <p>
+      <button
+        class="remove-btn"
+        onclick="
+          calculation = calculation.slice(0, -1);
+          displayCalculation();
+          console.log('Deleted last character.');"
+      >
+        Delete
+      </button>
+      <button
+        class="clear-btn"
+        onclick="
+          calculation = '';
+          displayCalculation();
+          console.log('Cleared.');"
+      >
+        Clear
+      </button>
+    </p>
+
+    <!-- Javascript Code -->
+    <script>
+      // Displaying calculation from local storage when page first loads
+      let calculation = localStorage.getItem('calculation') || '';
+
+      // Function to show calculation on webpage
+      function displayCalculation() {
+        const calculationText = document.querySelector('.calculation-text');
+        calculationText.innerText = calculation;
+
+        // Store the current calculation in local storage
+        localStorage.setItem('calculation', calculation);
+      }
+
+      // Function for Handling key press events
+      function handleKeyPress(event) {
+        const key = event.key;
+
+        // Check if the pressed key is a number or operator
+        if (!isNaN(key) ||
+            key === '+' ||
+            key === '-' ||
+            key === '*' ||
+            key === '/' ||
+            key === '.') {
+          calculation += key;
+          displayCalculation();
+          console.log(calculation);
+        }
+        else if (key === 'Enter') {
+          calculation = eval(calculation).toString();
+          displayCalculation();
+        }
+        else if (key === 'Backspace') {
+          calculation = calculation.toString().slice(0, -1);
+          displayCalculation();
+        }
+        else if (key === 'Escape') {
+          calculation = '';
+          displayCalculation();
+        }
+      }
+    </script>
+  </body>
+</html>

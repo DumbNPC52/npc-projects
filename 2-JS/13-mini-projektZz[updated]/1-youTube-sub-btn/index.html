@@ -7,39 +7,55 @@
   <meta name="description" content="Youtube Subscribe Button DOM mini Project">
   <meta name="keywords" content="HTML,CSS,JavaScript,DOM,YouTube Subscribe Button">
   <title>YouTube Subscribe Button</title>
+  <!-- Normalize CSS-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+  />
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <nav class="navigation--container">
-    <a href="/13-mini-projektZz[updated]/2-R-P-S[Final Update]/index.html">Rock Paper Scissors</a>
-    <a href="/13-mini-projektZz[updated]/3-amaZon-shipping-Calc/index.html">Amazon Shipping Calculator</a>
+  <nav class="nav-container">
+      <a class="nav-container__links" href="/13-mini-projektZz[updated]/2-R-P-S[Final Update]/index.html">Game</a>
+      <a class="nav-container__links" href="/13-mini-projektZz[updated]/3-amaZon-shipping-Calc/index.html">Amazon</a>
   </nav>
 
-  <header class="title">
-    <p class="title--text">YouTube Subscribe Button</p>
-  </header>
+  <main>
+    <header class="title">
+      <p class="title--text">YouTube Subscribe Button</p>
+    </header>
 
-  <section class="btn">
-    <button
-      class="btn--subscribe"
-      onclick="checkSubscription()"
-      >Subscribe</button>
-  </section>
+    <section class="btn">
+      <button
+        class="btn-js__subscribe btn--subscribe"
+        onclick="checkSubscription()"
+        >Subscribe</button>
+    </section>
+  </main>
 
   <!-- Javascript Section -->
   <script>
     // Function to handle subscribe button click;
-    const subscribeButton = document.querySelector('.btn--subscribe');
+    const subscribeButton = document.querySelector('.btn-js__subscribe');
 
     function checkSubscription() {
       if(subscribeButton.innerText === 'Subscribe') {
         subscribeButton.innerText = 'Subscribed';
+        subscribeButton.classList.add('is-subscribed');
+
+        setTimeout(() => {
         alert('Thank you for subscribing to NPC\'s YouTube Channel!');
+        }, 1000);
       } else {
         subscribeButton.innerText = 'Subscribe';
-        alert(`You have unsubscribed from NPC's YouTube Channel!`);
+        subscribeButton.classList.remove('is-subscribed');
+
+        setTimeout(() => {
+          alert(`You have unsubscribed from NPC's YouTube Channel!`);
+        }, 1000);
       }
     };
   </script>
-
 </body>
 </html>

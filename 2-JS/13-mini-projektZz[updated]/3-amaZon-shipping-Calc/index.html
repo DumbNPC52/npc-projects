@@ -8,30 +8,39 @@
   <meta name="keywords" content="HTML, CSS, JavaScript, DOM, Amazon Shipping Calculator">
   <title>Amazon Shipping Calculator</title>
 </head>
+<!-- Normalize CSS-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+  />
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css">
 <body>
-  <nav class="navigation--container">
-    <a href="/13-mini-projektZz[updated]/1-youTube-sub-btn/index.html">YouTube Subscribe Button</a>
-    <a href="/13-mini-projektZz[updated]/2-R-P-S[Final Update]/index.html">Rock Paper Scissors</a>
+  <nav class="nav-container">
+    <a class="nav-container__links" href="/13-mini-projektZz[updated]/1-youTube-sub-btn/index.html">YouTube</a>
+    <a class="nav-container__links" href="/13-mini-projektZz[updated]/2-R-P-S[Final Update]/index.html">Game</a>
   </nav>
 
   <main class="main">
-    <header class="main--title">
-      <p class="main--title__text">Amazon Shipping Calculator</p>
+    <header class="main-title">
+      <p class="main-title__text">Amazon Shipping Calculator</p>
     </header>
 
-    <input
+    <div class="main-input__group">
+      <input
       placeholder="Cost of order"
-      class="main--input"
+      class="main-input main-input__js"
       onkeydown="handleKeyPress(event);
       ">
 
-    <button
-      class="main--calc-btn"
-      onclick="calculateShipping();
-      ">
+      <button
+        class="main-calc__btn"
+        onclick="calculateShipping();
+        ">
       Calculate</button>
+    </div>
 
-    <p class="main--total-cost"></p>
+    <p class="main-total__cost"></p>
   </main>
 
   <!-- Javascript Section -->
@@ -39,7 +48,7 @@
     // Function to calculate shipping cost
     function calculateShipping() {
       // Displaying input value on webpage
-      const input = document.querySelector('.main--input').value;
+      const input = document.querySelector('.main-input__js').value;
       let inputValue = Number(input);
 
       // Checking if inputValue is less than $40
@@ -48,8 +57,14 @@
       }
 
       // Displaying total cost on webpage
-      document.querySelector('.main--total-cost')
-        .innerText = `The Total Cost is $${inputValue}`;
+      const displayTotal = document.querySelector('.main-total__cost');
+      displayTotal.innerText = `The Total Cost is $${inputValue}`;
+
+      // Adding animation
+      displayTotal.classList.add('updated');
+      setTimeout(() => {
+        displayTotal.classList.remove('updated');
+      }, 400);
     }
 
     // Function to check if event key is Enter and call calculateShipping
@@ -58,14 +73,6 @@
         calculateShipping();
       }
     }
-
-    // String Conversion
-    String();
-
-    // The Window Object
-    window.document;
-    window.console;
-    window.alert;
   </script>
 </body>
 </html>

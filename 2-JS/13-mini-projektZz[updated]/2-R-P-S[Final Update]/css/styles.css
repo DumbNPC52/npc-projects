@@ -1,0 +1,141 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Universal Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Defaults */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(25, 25, 25);
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.25rem;
+  height: 2000px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 20px;
+}
+
+/* General CSS */
+a {
+  text-decoration: none;
+  color: #cacaca;
+  transition: color 0.5s ease;
+}
+
+a:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+/* Nav Section */
+.nav-container {
+  background-color: rgb(88, 88, 88);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  gap: 30px;
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  top: 0;
+  box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+}
+
+.nav-container__links {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 550;
+}
+
+/* Main Section */
+.main {
+  min-height: calc(100vh - 90px);
+  padding-top: 100px;
+  gap: 20px;
+}
+
+.main-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(240, 240, 240);
+  margin-bottom: 10px;
+  font-family: 'Russo One', sans-serif;
+}
+
+.rock-btn,
+.paper-btn,
+.scissors-btn {
+  background-color: transparent;
+  border: 3px solid #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px 15px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.rock-btn:hover,
+.paper-btn:hover,
+.scissors-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rock-btn:active,
+.paper-btn:active,
+.scissors-btn:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.move-icon {
+  height: 50px;
+}
+
+.result {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.score {
+  margin-top: 70px;
+}
+
+.reset-btn {
+  background-color: rgb(240, 240, 240);
+  border: none;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: white;
+  box-shadow: 0 0 15px white;
+  transform: scale(1.05);
+}
+
+.reset-btn:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}

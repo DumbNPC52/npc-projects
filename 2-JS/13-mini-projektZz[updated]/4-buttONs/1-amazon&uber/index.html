@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="npc">
+  <meta name="description" content="Using HTML/CSS and Javascript to make amazon and uber buttons">
+  <meta name="keywords" content="Amazon, Uber, Button, HTML, CSS, Javascript">
+  <title>Buttons</title>
+  <!-- Normalize CSS-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+  />
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="amazon-box">
+    <P class="title-text">Amazon Button</P>
+    <button
+      class="amazon-btn amazon-btn-js"
+      onclick="addToCart();"
+    >
+      Add to Cart</button>
+
+    <p class="cart-text"></p>
+  </div>
+
+  <div class="uber-box">
+    <p class="title-text">Uber Buttons</p>
+    <button
+      class="request-btn request-btn-js"
+      onclick="requestNow();"
+    >
+      Request now</button>
+
+    <button
+      class="schedule-btn schedule-btn-js"
+      onclick="scheduleUber();"
+    >
+      Schedule for later</button>
+
+    <p class="uber-text"></p>
+    <p class="schedule-text"></p>
+  </div>
+
+  <div class="test-box">
+    <p class="title-text">Test Button</p>
+    <button
+      class="test-btn test-btn-js"
+      onclick="checkTest();"
+        >Test</button>
+
+    <p class="test-text"></p>
+  </div>
+
+  <!-- Link to Script File -->
+  <script src="script/script.js"></script>
+  </body>
+</html>
